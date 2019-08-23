@@ -1,0 +1,25 @@
+.footer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    font-family: 'Shadows Into Light', cursive;
+    color: #000;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.footer span {
+    margin: 0 2vh;
+    font-size: 25px;
+}
+
+@media (max-width: 568px) { 
+    .footer{
+    justify-content: center;
+    }
+    .footer span {
+        font-size: 15px;
+    }
+  }
+  

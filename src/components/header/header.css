@@ -1,0 +1,67 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Shadows Into Light', cursive;
+}
+.header-title {
+  position: absolute;
+  bottom: -10%;
+  right: 19%;
+  color: #ffcb05;
+  font-size: 25px;
+  transform: rotateZ(6deg);
+}
+
+.header-logo img {
+  height: 15vh;
+  width: auto;
+}
+
+.header-logo {
+  height: 15vh;
+  width: auto;
+  margin: 2vh 0;
+  position: relative;
+}
+
+.shop-header a {
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+.shop-header a:hover {
+  color: rgba(185, 185, 185, 0.411);
+}
+
+.shop-header .logo {
+  font-size: 4rem;
+  padding-left: 1rem;
+}
+
+.shop-header .shopping-cart {
+  align-self: center;
+  font-size: 1.3rem;
+  padding-right: 1rem;
+  text-align: center;
+}
+
+.shop-header .shopping-cart .cart-icon {
+  font-size: 2.2rem;
+  margin-right: 10px;
+}
+
+@media (max-width: 1000px) { 
+
+}
+@media (max-width: 667px) { 
+  .header-logo {
+    height: 14ch;
+    width: auto;
+  }
+  .header-logo img {
+    height: 14ch;
+  }
+  .header-title {
+    font-size: 4vh;
+  }
+}

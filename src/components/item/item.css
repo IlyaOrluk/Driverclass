@@ -1,0 +1,32 @@
+.show-item {
+  display: flex;
+  margin: 1vh;
+  padding: 1vh;
+  width: 34vh;
+  border: 1px solid rgba(12, 9, 6, 0.753);
+  color: rgb(39, 24, 24);
+}
+
+.show-item img {
+  width: 150px;
+  height: 143px;
+  margin: 1vh;
+}
+
+.show-item .item-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  align-items: flex-start;
+}
+
+.show-item .item-details .item-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: rgb(39, 24, 24);
+}
+
+.show-item .item-details .item-price {
+  font-size: 1.4rem;
+}
