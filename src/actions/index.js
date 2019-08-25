@@ -50,6 +50,31 @@ export const userPostLoginForm = (service) => (data) => (dispatch) => {
   .catch((err) => alert(err));
 }
 
+export const updateUserNameRegister = (name) => {
+  return {
+    type: 'USER_REGISTER_NAME',
+    payload: name
+  }
+}
+
+export const updateUserPasswordRegister = (value) => {
+  return {
+    type: 'USER_REGISTER_PASSWORD',
+    payload: value
+  }
+}
+
+export const userPostRegisterForm = (service) => (data) => (dispatch) => {
+  console.log(data)
+  service.handleSignup(data)
+  .then((res) => {
+    console.log(res)
+    localStorage.setItem('token', res.data.token);
+  })
+  .catch((err) => alert(err));
+}
+
+
 const fetchItems = (service) => (pageNumber, listCount) => (dispatch) => {
   dispatch(itemsRequested());
   service.getPokemonList(pageNumber, listCount)

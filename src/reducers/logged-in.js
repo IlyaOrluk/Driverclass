@@ -1,4 +1,4 @@
-const updateloggedIn = (state, action) => {
+const updateLoggedIn = (state, action) => {
     if(state === undefined) {
         return {
             logged_in: '',
@@ -25,4 +25,4 @@ const updateloggedIn = (state, action) => {
     }
 }
 
-export default updateloggedIn;
+export default updateLoggedIn;

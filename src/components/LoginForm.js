@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { updateUserNameLogin, updateUserPasswordLogin, userPostLoginForm } from '../actions';
 import { compose } from '../utils';  

@@ -6,7 +6,7 @@ const reducer = (state, action) => {
   return {
     loggedIn: updateLoggedIn(state, action),
     loginForm: updateLoginForm(state, action),
-    registerform: updateRegisterForm(state, action)
+    registerForm: updateRegisterForm(state, action)
   };
 };
 
