@@ -12,7 +12,12 @@ const updateloggedIn = (state, action) => {
             logged_in: action.payload,
             username: ''
           };
-    
+
+        case 'USER_AUTH_NAME':
+            return {
+              logged_in: state.loggedIn.logged_in,
+              username: action.payload
+            };
     
 
     default:

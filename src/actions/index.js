@@ -26,9 +26,29 @@ const userVerification = () => {
   }
 }
 
+export const updateUserNameLogin = (name) => {
+  return {
+    type: 'USER_AUTHENTICATION_NAME',
+    payload: name
+  }
+}
 
+export const updateUserPasswordLogin = (value) => {
+  return {
+    type: 'USER_AUTHENTICATION_PASSWORD',
+    payload: value
+  }
+}
 
-
+export const userPostLoginForm = (service) => (data) => (dispatch) => {
+  console.log(data)
+  service.handleLogin(data)
+  .then((res) => {
+    console.log(res)
+    localStorage.setItem('token', res.data.token);
+  })
+  .catch((err) => alert(err));
+}
 
 const fetchItems = (service) => (pageNumber, listCount) => (dispatch) => {
   dispatch(itemsRequested());

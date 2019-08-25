@@ -2,20 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class SignupForm extends React.Component {
-  state = {
-    username: '',
-    password: ''
-  };
+  // state = {
+  //   username: '',
+  //   password: ''
+  // };
 
-  handle_change = e => {
-    const name = e.target.name;
-    const value = e.target.value;
-    this.setState(prevstate => {
-      const newState = { ...prevstate };
-      newState[name] = value;
-      return newState;
-    });
-  };
+  // handle_change = e => {
+  //   const name = e.target.name;
+  //   const value = e.target.value;
+  //   this.setState(prevstate => {
+  //     const newState = { ...prevstate };
+  //     newState[name] = value;
+  //     return newState;
+  //   });
+  // };
 
   render() {
     return (

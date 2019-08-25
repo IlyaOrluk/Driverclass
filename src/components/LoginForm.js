@@ -1,56 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { compose } from '../../utils';  
-import { withService } from '../hoc';
+import { updateUserNameLogin, updateUserPasswordLogin, userPostLoginForm } from '../actions';
+import { compose } from '../utils';  
+import { withService } from './hoc';
 
-class LoginForm extends React.Component {
-  state = {
-    username: '',
-    password: ''
-  };
-
-  handle_change = e => {
-    const name = e.target.name;
-    const value = e.target.value;
-    this.setState(prevstate => {
-      const newState = { ...prevstate };
-      newState[name] = value;
-      return newState;
-    });
-  };
-
-  render() {
+ const LoginForm = ({...props}) => {
     return (
-      <form onSubmit={e => this.props.handle_login(e, this.state)}>
+      <form onSubmit={e => {
+        e.preventDefault();
+        props.userPostLoginForm(props.loginForm.loginForm);
+        }}>
         <h4>Log In</h4>
         <label htmlFor="username">Username</label>
         <input
           type="text"
           name="username"
-          value={this.state.username}
-          onChange={this.handle_change}
+          onInput={e => props.updateUserNameLogin(e.target.value)}
         />
         <label htmlFor="password">Password</label>
         <input
           type="password"
           name="password"
-          value={this.state.password}
-          onChange={this.handle_change}
+          onInput={e => props.updateUserPasswordLogin(e.target.value)}
         />
         <input type="submit" />
       </form>
     );
-  }
 }
 
-const mapStateToProps = ({}) => {
-  return {};
+const mapStateToProps = (loginForm) => {
+  return {loginForm};
 };
 
 const mapDispatchToProps = (dispatch, { storeService }) => {
   return {
-    
+    updateUserNameLogin: (name) => dispatch(updateUserNameLogin(name)),
+    updateUserPasswordLogin: (value) => dispatch(updateUserPasswordLogin(value)),
+    userPostLoginForm: (data) => dispatch(userPostLoginForm(storeService)(data))
   };
 };
 

@@ -3,8 +3,10 @@ import { connect } from 'react-redux';
 import { withService } from '../hoc';
 import { userVerification } from '../../actions';
 import { compose } from '../../utils';
+import LoginForm from '../LoginForm';
 
 import './home-page.css';
+
 
 class HomePage extends React.Component {
 
@@ -15,18 +17,21 @@ class HomePage extends React.Component {
   // };
 
   componentDidMount(){
-    // localStorage.setItem('token', 'dg78g7dg7g7d7gd7g7d8');
     this.props.userVerification()
-    console.log(localStorage.token)
-    console.log(this.props)
   }
 
+  componentDidUpdate(prevProps) {
+    if(this.props.logged_in !== prevProps.logged_in){
+      this.props.userVerification()
+    }
+  }
 
   render() {
-    const logged = localStorage.token ? <h1>AUTH</h1> : <h1>NO</h1>
-    console.log(this.props)
+    const logged = localStorage.token ? <h1>YOU AUTH</h1> : <LoginForm />
+    console.log(this.props.logged_in)
     return (
       <React.Fragment>
+        <span>{`${this.props.logged_in}`}</span>
         {logged}
         <h1>HOME</h1>
       </React.Fragment>
